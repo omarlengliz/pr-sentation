@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Déploiement d'une application Node.js sur Render.com</title>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css" id="theme">
+  <style>
+    img {
+      max-width: 80%;
+      height: auto;
+      margin: 20px 0;
+    }
+    .green {
+      background-color: #3C873A;
+      color: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #6cc24a;
+      color: #303030;
+    }
+    .service-card {
+      background-color: #6cc24a; 
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+    
+      <section>
+          <h1 class="green" style="color: #fff;">
+            Déployer NodeJs sur render.com
+          </h1>
+          <div style="display: flex; justify-content: space-around;">
+           <img src="nodejs-1-logo-svg-vector.svg" width="250"/>
+           <img src="logo-redesign-02-word-dark.0811da26fe4b1f9a9b6c642d91bbcf73.svg" width="250" height="100"/>
+          </div>
+        <h3> PAR: Lengliz Omar</h3>
+      </section>
+
+      <section>
+        <h2>Qu'est-ce que Render?</h2>
+        <p>Render est une plateforme cloud qui offre une solution simple et évolutive pour le déploiement et l'hébergement d'applications web, y compris les applications Node.js. Il propose une interface conviviale, une mise à l'échelle automatique et des certificats SSL intégrés. Render offre également une intégration transparente avec des outils et des frameworks de développement populaires.</p>
+      </section>
+
+      
+      <section>
+        <h2 class="green" style="color: white;">Aperçu des services Render.com</h2>
+
+      
+        <section>
+          <div class="service-card" data-background="#6cc24a">
+            <h3>Services Web</h3>
+            <p>Alimentez vos applications web avec les Services Web de Render.com.</p>
+          </div>
+        </section>
+
+       
+        <section>
+          <div class="service-card" data-background="#44883e">
+            <h3>Sites Statiques</h3>
+            <p>Créez des sites web statiques facilement avec Create React App, Gatsby et Hugo.</p>
+          </div>
+        </section>
+
+        
+        <section>
+          <div class="service-card" data-background="#6cc24a">
+            <h3>Background Workers            </h3>
+            <p>Exécutez des tâches en arrière-plan efficacement avec Celery, Sidekiq et RabbitMQ.</p>
+          </div>
+        </section>
+
+      
+        <section>
+          <div class="service-card" data-background="#44883e">
+            <h3>Cron Jobs            </h3>
+            <p>Planifiez et automatisez des tâches de manière fiable avec les Travaux Cron.</p>
+          </div>
+        </section>
+
+        
+        <section>
+          <div class="service-card" data-background="#6cc24a">
+            <h3>Dockerfiles</h3>
+            <p>Hébergez pratiquement n'importe quoi avec des Dockerfiles personnalisés.</p>
+          </div>
+        </section>
+
+       
+        <section>
+          <div class="service-card" data-background="#44883e">
+            <h3>Services Privés</h3>
+            <p>Exécutez des services internes sur un réseau privé en toute simplicité.</p>
+          </div>
+        </section>
+
+    
+        <section>
+          <div class="service-card" data-background="#6cc24a">
+            <h3>PostgreSQL</h3>
+            <p>Bases de données entièrement gérées avec des sauvegardes automatisées.</p>
+          </div>
+        </section>
+
+        
+        <section>
+          <div class="service-card" data-background="#44883e">
+            <h3>Redis®</h3>
+            <p>Stockage en mémoire entièrement géré avec des métriques en direct.</p>
+          </div>
+        </section>
+
+      </section>
+
+      <section>
+        <h2 class="green" style="color: white;">Render.com vs Heroku</h2>
+
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th>Fonctionnalité</th>
+                <th>Render</th>
+                <th>Heroku</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Simplicité d'utilisation</td>
+                <td>Élevée</td>
+                <td>Modérée</td>
+              </tr>
+              <tr>
+                <td>Mise à l'échelle automatique et équilibrage de charge</td>
+                <td>Oui</td>
+                <td>Oui</td>
+              </tr>
+              <tr>
+                <td>Certificats SSL intégrés</td>
+                <td>Oui</td>
+                <td>Oui</td>
+              </tr>
+              <tr>
+                <td>Prise en charge de plusieurs langages de programmation</td>
+                <td>Plusieurs, dont Node.js</td>
+                <td>Plusieurs, dont Node.js</td>
+              </tr>
+              <tr>
+                <td>Hébergement de sites statiques</td>
+                <td>Oui</td>
+                <td>Oui</td>
+              </tr>
+              <tr>
+                <td>Intégration avec les outils de développement</td>
+                <td>Transparente</td>
+                <td>Transparente</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th>Fonctionnalité</th>
+                <th>Render</th>
+                <th>Heroku</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tarification</td>
+                <td>Basée sur l'utilisation</td>
+                <td>Basée sur l'utilisation</td>
+              </tr>
+              <tr>
+                <td colspan="3"><strong>Avantages de Render par rapport à Heroku</strong></td>
+              </tr>
+              <tr>
+                <td>Précision de la mise à l'échelle automatique</td>
+                <td>Mise à l'échelle automatique basée sur le CPU/RAM pour une allocation de ressources précise</td>
+                <td>La performance est influencée par l'architecture basée sur les dynos</td>
+              </tr>
+              <tr>
+                <td>Certificats SSL économiques</td>
+                <td>Render offre des certificats TLS gratuits, réduisant les coûts pour les connexions sécurisées</td>
+                <td>Les certificats SSL peuvent augmenter les frais globaux</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </section>
+
+      <section>
+        <h2 class="green" style="color: white;">Étapes pour déployer une application Node.js sur Render.com avec des captures d'écran</h2>
+        <ol>
+          <li>
+            <span>Étape 1 : Inscrivez-vous sur Render.com.</span>
+          </li>
+          <li>
+            <span>Étape 2 : Créez un nouveau service web.</span>
+          </li>
+          <li>
+            <span>Étape 3 : Connectez votre référentiel de code (par exemple, GitHub, GitLab, etc.) à Render.</span>
+          </li>
+          <li>
+            <span>Étape 4 : Configurez le service en sélectionnant Node.js comme environnement et en spécifiant les paramètres nécessaires (par exemple, le port, la commande de construction, etc.).</span>
+          </li>
+        
+          <li>
+            <span>Étape 5 : Une fois le déploiement réussi, accédez à votre application Node.js déployée sur Render.com.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h1 class="green" style="color: white;">Conclusion</h1>
+        <p>En conclusion, Render.com est une plateforme puissante pour le déploiement et l'hébergement d'applications Node.js. Elle offre une interface conviviale, une mise à l'échelle automatique et une intégration transparente avec des outils de développement populaires. En suivant les étapes décrites dans cette présentation, vous pouvez facilement déployer votre application Node.js sur Render.com et profiter de ses fonctionnalités et avantages.</p>
+      </section>
+      <section>
+        <h1 class="green" style="color: white;">Merci pour votre attention </h1>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      transition: 'slide',
+      slideNumber: true,
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      width: 1600,
+      height: 900,
+      Plugin:[]
+    });
+  </script>
+</body>
+</html>
